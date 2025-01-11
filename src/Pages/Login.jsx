@@ -17,7 +17,7 @@ const Login = () => {
         email , password
       } , {withCredentials: true})
 
-
+      console.log(resLogin.data.accessToken)
       if (responseLogin.data.message === 'user logged in successfully') {
         localStorage.setItem('accessToken' , )
         navigate('products')
