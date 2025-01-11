@@ -35,7 +35,7 @@ const Products = () => {
   const SignOut = async ()=> {
 
     try {
-      const logOutUser = await axios.post ('http://localhost:3000/api/v1/logout')
+      const logOutUser = await axios.post ('https://plain-toinette-mtkconsultant-b465e3eb.koyeb.app/api/v1/logout')
       console.log (logOutUser)
       if(logOutUser.data.message === 'user logout successfully') {
         localStorage.removeItem('accessToken')

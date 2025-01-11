@@ -12,7 +12,7 @@ const Register = () => {
   const registerUser = async (event) => {
     
     try {
-      const registerRequest = await axios.post ('http://localhost:3000/api/v1/register' , {
+      const registerRequest = await axios.post ('https://plain-toinette-mtkconsultant-b465e3eb.koyeb.app/api/v1/register' , {
         email , password
       })
       if (registerRequest.data.message === 'registration successfull') {

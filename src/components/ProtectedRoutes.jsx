@@ -15,7 +15,7 @@ const ProtectedRoutes = ({ component }) => {
 
                 if (!accessToken) return navigate('/')
 
-                const protectedRoute = await axios.get ('http://localhost:3000/api/v1/userData' , 
+                const protectedRoute = await axios.get ('https://plain-toinette-mtkconsultant-b465e3eb.koyeb.app/api/v1/userData' , 
                     {
                         headers: {
                         'Authorization': `Bearer ${accessToken}`, 
@@ -33,7 +33,7 @@ const ProtectedRoutes = ({ component }) => {
                 if (error.response.data.message === 'invalid token') {
                         localStorage.removeItem('accessToken')
                         try {
-                            const regenerateToken = await axios.post('http://localhost:3000/api/v1/generateAccessToken' , null , {withCredentials: true});
+                            const regenerateToken = await axios.post('https://plain-toinette-mtkconsultant-b465e3eb.koyeb.app/api/v1/generateAccessToken' , null , {withCredentials: true});
                             if(regenerateToken.data.accesToken) {
                                 localStorage.setItem('accessToken' , regenerateToken.data.accesToken)
                                 setLoading(false)
