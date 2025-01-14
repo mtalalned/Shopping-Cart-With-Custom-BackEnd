@@ -15,11 +15,10 @@ const Login = () => {
     try {
       const responseLogin = await axios.post('https://plain-toinette-mtkconsultant-b465e3eb.koyeb.app/api/v1/login' , {
         email , password
-      } , {withCredentials: true})
+      })
 
-      console.log(resLogin.data.accessToken)
       if (responseLogin.data.message === 'user logged in successfully') {
-        localStorage.setItem('accessToken' , )
+        localStorage.setItem('accessToken' , responseLogin.data.accessToken)
         navigate('products')
       }
     } catch (error) {
